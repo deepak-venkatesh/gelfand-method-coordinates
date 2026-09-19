@@ -281,6 +281,30 @@ $B(x^2)$ will always be on the right in these two cases.\\
 
 \textbf{Exercise 5}
 
+The space or distance between the two points is 12 (-5 to 0 and 0 to 7). The middle point will be 6 units from -5 on the right which is at point 1.\\
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+    % Number line
+    \draw[<->, thick] (-6,0) -- (8,0);
+
+    % Points
+    \fill (-5,0) circle (1pt);
+    \fill (1,0) circle (1pt);
+    \fill (7,0) circle (1pt);
+
+    % Labels
+    \node[above] at (-5,0) {$A$};
+    \node[below] at (-5,0) {$-5$};
+
+    \node[above] at (1,0) {$\text{middle}$};
+    \node[below] at (1,0) {$1$};
+
+    \node[above] at (7,0) {$B$};
+    \node[below] at (7,0) {$7$};
+\end{tikzpicture}
+\end{center}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Chapter End
