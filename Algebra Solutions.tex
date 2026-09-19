@@ -1,0 +1,309 @@
+\documentclass[10pt]{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{comment}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{longdivision}
+\usepackage{booktabs}
+\usepackage{polynom}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{float}
+\usepackage{cancel}
+\usepackage{xlop}
+\usepackage{xcolor} % for colors
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.5em}
+
+% Add license
+\usepackage{ccicons}
+\usepackage[
+    type={CC},
+    modifier={by-nc-sa},
+    version={4.0},
+]{doclicense}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+
+% Footer center
+\fancyfoot[C]{\small\textcolor{gray}{
+GitHub repository: \href{https://github.com/deepak-venkatesh/gelfand-method-coordinates}{https://github.com/deepak-venkatesh/gelfand-method-coordinates}
+}}
+
+
+% Page number (optional)
+\fancyfoot[R]{\thepage}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+\title {An Unofficial Compendium of Worked Solutions to the Problems in \textit{The Method of Coordinates}\\
+[0.5em]\large by I.M. Gelfand, E. G. Glagoleva \& A. A. Kirillov}
+
+\author{Deepak Venkatesh}
+\date{\today}
+
+
+\begin{document}
+\noindent
+\maketitle
+\begin{abstract}
+\noindent
+This book is an independent and unofficial collection of worked solutions
+to problems inspired by the book \textit{The Method of Coordinates} by I.\,M.~Gelfand, E.\,G.~Glagoleva and A.\,A.~Kirillov,
+first published in 1967. The original text presents a wide range of problems
+in elementary algebra, some accompanied by solutions and others left as exercises
+for the reader.\\
+
+\noindent
+The aim of this book is to provide clear, logically consistent solutions
+to all problems addressed, written in a style accessible to motivated students
+and self learners. Proofs have been verified primarily by hand, and in some cases
+supported by small computational checks written in Scheme (a dialect of Lisp) or in Python.
+Large language models were used only as auxiliary tools, primarily for generating
+figures in \LaTeX\ and for reviewing exposition.\\
+
+\noindent
+This work is not affiliated with, endorsed by, or approved by the original authors
+or publisher. Any errors, omissions, or inconsistencies are entirely my own.
+Issues and corrections may be reported at
+\href{https://github.com/deepak-venkatesh/gelfand-method-coordinates}{this repository}.
+\end{abstract}
+
+\clearpage
+\thispagestyle{empty}
+
+\vspace*{2cm}
+
+\begin{center}
+  {\Large \textbf{Copyright and Disclaimer}}
+\end{center}
+
+\vspace{1cm}
+
+\noindent
+\textbf{Unofficial companion.}
+
+\vspace{0.4cm}
+
+\noindent
+This document is an \textbf{independent, unofficial collection of worked solutions}
+to problems from \textit{The Method of Coordinates} by I.\,M.~Gelfand , E.\,G.~Glagoleva and A.\,A.~Kirillov (first published 1967).
+
+\vspace{0.4cm}
+
+\noindent
+This work is \textbf{not affiliated with, endorsed by, or approved by} the original
+authors or the publisher. The names of the authors and the title of the book are used
+only for identification and reference.
+
+\vspace{0.4cm}
+
+\noindent
+The original problem statements are not reproduced here. All exposition and solutions
+are written independently by the author of this document.
+
+\vspace{1.5cm}
+
+\noindent
+\textbf{Copyright \textcopyright\ \the\year\ Deepak Venkatesh}
+
+\vspace{1.5cm}
+
+\noindent
+License: \doclicenseThis
+
+\vfill
+
+\noindent
+Project repository:\\
+\href{https://github.com/deepak-venkatesh/gelfand-method-coordinates}{https://github.com/deepak-venkatesh/gelfand-method-coordinates}
+
+\clearpage
+
+\begin{comment}
+  \vspace{27em}
+  \doclicenseThis
+\end{comment}
+
+\newpage
+\thispagestyle{empty}
+
+\vspace*{\fill}
+\begin{center}
+\textit{For\\[0.5em]
+My Daughter and Son}
+\end{center}
+\vspace*{\fill}
+\newpage
+\tableofcontents
+\newpage % start sections on a fresh page
+
+\textbf{Working Notes}\\\\
+
+\emph{Challenging Problems for Middle Schoolers:}\\
+
+Problem Numbers:  \\\\
+
+\emph{Typographical errors in:}\\
+
+Problem Numbers: 
+
+\newpage
+
+\part{Part 1}
+
+\section{Chapter 1: The Coordinates of Points on a Line}
+
+%%%%%%%%%% 1
+\subsection{The Number Axis}
+
+\textbf{Exercise 1}
+
+\textbf{(a)}
+
+The points are marked below. Note that $\dfrac{13}{3}$ lies somewhere between 4 and 5.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    % Number line
+    \draw[<->, thick] (-3,0) -- (5.5,0);
+
+    % Points
+    \fill (-2,0) circle (1pt);
+    \fill (0,0) circle (1pt);
+    \fill (13/3,0) circle (1pt);
+
+    % Labels
+    \node[above] at (-2,0) {$A$};
+    \node[below] at (-2,0) {$-2$};
+
+    \node[above] at (0,0) {$K$};
+    \node[below] at (0,0) {$0$};
+
+    \node[above] at (13/3,0) {$B$};
+    \node[below] at (13/3,0) {$\frac{13}{3}$};
+\end{tikzpicture}
+\end{center}
+
+\textbf{(b)}
+
+The two points are 3 units to the right and 3 units to the left of $M$ as shown in the line below.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.2]
+    % Number line
+    \draw[<->, thick] (-3,0) -- (6,0);
+
+    % Points
+    \fill (-1,0) circle (1pt);
+    \fill (2,0) circle (1pt);
+    \fill (5,0) circle (1pt);
+
+    % Labels
+    \node[above] at (2,0) {$M$};
+    \node[below] at (2,0) {$2$};
+
+    \node[above] at (-1,0) {$A$};
+    \node[below] at (-1,0) {$-1$};
+
+    \node[above] at (5,0) {$B$};
+    \node[below] at (5,0) {$5$};
+\end{tikzpicture}
+\end{center}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter End
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%% 2
+\subsection{The Absolute Value of a Number}
+
+
+%%%%%%%%%% 3
+\subsection{The Distance Between Two Points}
+
+
+
+\section{Chapter 2: The Coordinates of Points in the Plane}
+
+%%%%%%%%%% 4
+\subsection{The Coordinate Plane}
+
+%%%%%%%%%% 5
+\subsection{Relations Connecting Coordinates}
+
+%%%%%%%%%% 6
+\subsection{The Distance Between Two Points}
+
+%%%%%%%%%% 7
+\subsection{Defining Figures}
+
+%%%%%%%%%% 8
+\subsection{We Begin to Solve Problems}
+
+%%%%%%%%%% 9
+\subsection{Other System of Coordinates}
+
+
+
+\section{Chapter 3: The Coordinates of a Point in Space}
+
+%%%%%%%%%% 10
+\subsection{Coordinate Axes and Planes}
+
+%%%%%%%%%% 11
+\subsection{Defining Figures in Space}
+
+
+
+\part{Part 2}
+
+\section{Chapter 1: Introduction}
+
+%%%%%%%%%% 1
+\subsection{Some General Considerations}
+
+%%%%%%%%%% 2
+\subsection{Geometry as an Aid in Calculation}
+
+%%%%%%%%%% 3
+\subsection{The Need for Introducing Four-Dimensional Space}
+
+%%%%%%%%%% 4
+\subsection{The Peculiarities of Four-Dimensional Space}
+
+%%%%%%%%%% 5
+\subsection{Some Physics}
+
+
+\section{Chapter 2: Four-Dimensional Space}
+
+%%%%%%%%%% 6
+\subsection{Coordinate Axes and Planes}
+
+%%%%%%%%%% 7
+\subsection{Some Problems}
+
+
+\section{Chapter 3: The Four-Dimensional Cube}
+
+%%%%%%%%%% 8
+\subsection{The Definition of the Sphere and the Cube}
+
+%%%%%%%%%% 9
+\subsection{The Structure of the Four-Dimensional Cube}
+
+%%%%%%%%%% 10
+\subsection{Problems on the Cube}
+
+ 
+\end{document}
