@@ -306,6 +306,53 @@ The space or distance between the two points is 12 (-5 to 0 and 0 to 7). The mid
 \end{center}
 
 
+\textbf{Exercise 6}
+
+\textbf{(a)}
+
+Whole numbers will include number 0.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+    % Number line
+    \draw[<->, thick] (-6,0) -- (9,0);
+
+    % Mark and label whole numbers
+    \foreach \x in {0,1,2,3,4,5,6,7}
+    {
+        \fill[red] (\x,0) circle (1.5pt);
+        \node[below] at (\x,0) {$\x$};
+    }
+
+    % Dots after 7
+    \node[below] at (8,0) {$\cdots$};
+\end{tikzpicture}
+\end{center}
+
+\textbf{(b)}
+
+Positive numbers will not include number 0.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+    % Number line
+    \draw[<->, thick] (-6,0) -- (9,0);
+
+    % Mark and label whole numbers
+    \foreach \x in {1,2,3,4,5,6,7}
+    {
+        \fill[red] (\x,0) circle (1.5pt);
+        \node[below] at (\x,0) {$\x$};
+    }
+
+    % Dots after 7
+    \node[below] at (8,0) {$\cdots$};
+\end{tikzpicture}
+\end{center}
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Chapter End
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
