@@ -750,6 +750,127 @@ the main equation. Therefore, the solution is $-2 \le x \le -1$.
 
 \textbf{(a)}
 
+This includes all numbers from 4 to 7 and from 7 to 10. Both 4 and 10 are not included. We will write this as 
+$(4, 7) \cup (7, 10)$
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+
+    % Number line
+    \draw[<->, thick] (0,0) -- (12,0);
+
+    % Vertical connectors
+    \draw[blue, thick] (4,0) -- (4,0.7);
+    \draw[blue, thick] (7,0) -- (7,0.7);
+    \draw[blue, thick] (10,0) -- (10,0.7);
+
+    % Solution interval
+    \draw[blue, very thick] (4,0.7) -- (7,0.7);
+    \draw[blue, very thick] (7,0.7) -- (10,0.7);
+
+    % Open circles
+    \draw[blue, thick, fill=white] (4,0.7) circle (3pt);
+    \draw[blue, thick, fill=white] (7,0.7) circle (3pt);
+    \draw[blue, thick, fill=white] (10,0.7) circle (3pt);
+
+    % Labels
+    \node[below] at (4,0) {$4$};
+    \node[below] at (7,0) {$7$};
+    \node[below] at (10,0) {$10$};
+
+\end{tikzpicture}
+\end{center}
+
+\textbf{(b)}
+
+$|x - 2| > 1$ can be solved with two cases
+
+Case 1: 
+
+\begin{gather*}
+  |x - 2| > 1\\
+  x - 2 > 1\\
+  x > 3
+\end{gather*}
+
+Case 2:
+
+\begin{gather*}
+  |x - 2| > 1\\
+  -x + 2 > 1\\
+  x < 1
+\end{gather*}
+
+The solution is $(-\infty, 1) \cup (3, \infty)$
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+
+    % Number line
+    \draw[<->, thick] (-5,0) -- (7,0);
+
+    % Vertical connectors
+    \draw[blue, thick] (1,0) -- (1,0.7);
+    \draw[blue, thick] (3,0) -- (3,0.7);
+
+    % Solution arrows
+    \draw[blue, ->, very thick] (1,0.7) -- (-2,0.7);
+    \draw[blue, ->, very thick] (3,0.7) -- (6,0.7);
+
+    % Open circles
+    \draw[blue, thick, fill=white] (1,0.7) circle (3pt);
+    \draw[blue, thick, fill=white] (3,0.7) circle (3pt);
+
+    % Labels
+    \node[below] at (1,0) {$1$};
+    \node[below] at (3,0) {$3$};
+
+\end{tikzpicture}
+\end{center}
+
+\textbf{(c)}
+
+We can take two cases here too.
+
+Case 1:
+
+\begin{gather*}
+  |x + 3| = 3\\
+  x + 3 = 3\\
+  x = 0
+\end{gather*}
+
+Case 2:
+
+\begin{gather*}
+  |x + 3| = 3\\
+  - x - 3 = 3\\
+  x = -6
+\end{gather*}
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+
+    % Number line
+    \draw[<->, thick] (-8,0) -- (2,0);
+
+    % Vertical connector
+    \draw[blue, thick] (-6,0) -- (-6,0.7);
+    \draw[blue, thick] (0,0) -- (0,0.7);
+
+    % Open circle
+    \draw[blue, thick, fill=blue] (-6,0.7) circle (3pt);
+    \draw[blue, thick, fill=blue] (0,0.7) circle (3pt);
+
+    % Label
+    \node[below] at (-6,0) {$-6$};
+    \node[below] at (0,0) {$0$};
+
+\end{tikzpicture}
+\end{center}
+
+\textbf{Exercise 2}
+
 
 
 \section{Chapter 2: The Coordinates of Points in the Plane}
