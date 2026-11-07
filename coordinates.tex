@@ -871,6 +871,78 @@ Case 2:
 
 \textbf{Exercise 2}
 
+There are three sub cases essentially - $A$ and $B$ are same, $A > B$, and $A < B$.
+
+Case 1: $A = B$
+
+Here $A(x_1) = B(x_2)$, thus mid point is $x_1$ or $x_2$.
+
+Case 2: $A > B$
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+
+    % Number line
+    \draw[<->, thick] (-8,0) -- (2,0);
+
+    % Vertical connector
+    \draw[blue, thick] (-6,0) -- (-6,0.7);
+    \draw[blue, thick] (0,0) -- (0,0.7);
+
+    % Open circle
+    \draw[blue, thick, fill=blue] (-6,0.7) circle (3pt);
+    \draw[blue, thick, fill=blue] (0,0.7) circle (3pt);
+
+    % Label
+    \node[below] at (-6,0) {$B$};
+    \node[below] at (0,0) {$A$};
+
+\end{tikzpicture}
+\end{center}
+
+The distance between the two points is $\dfrac{x_1 - x_2}{2}$.
+
+So the mid point is 
+\begin{gather*}
+    x_2 + \dfrac{x_1 - x_2}{2}\\\\
+    \dfrac{x_1 + x_2}{2}
+\end{gather*}
+
+Case 2: $A < B$
+
+\begin{center}
+\begin{tikzpicture}[scale=1.0]
+
+    % Number line
+    \draw[<->, thick] (-8,0) -- (2,0);
+
+    % Vertical connector
+    \draw[blue, thick] (-6,0) -- (-6,0.7);
+    \draw[blue, thick] (0,0) -- (0,0.7);
+
+    % Open circle
+    \draw[blue, thick, fill=blue] (-6,0.7) circle (3pt);
+    \draw[blue, thick, fill=blue] (0,0.7) circle (3pt);
+
+    % Label
+    \node[below] at (-6,0) {$A$};
+    \node[below] at (0,0) {$B$};
+
+\end{tikzpicture}
+\end{center}
+
+The distance between the two points is $\dfrac{x_2 - x_1}{2}$.
+
+So the mid point is 
+\begin{gather*}
+    x_1 + \dfrac{x_2 - x_1}{2}\\\\
+    \dfrac{x_1 + x_2}{2}
+\end{gather*}
+
+Now if we look carefully that all three cases essentially give the mid point as $\dfrac{x_1 + x_2}{2}$.\\
+
+\textbf{Exercise 3}
+
 
 
 \section{Chapter 2: The Coordinates of Points in the Plane}
