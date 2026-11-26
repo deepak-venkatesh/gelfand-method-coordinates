@@ -14,6 +14,9 @@
 \usepackage{cancel}
 \usepackage{xlop}
 \usepackage{xcolor} % for colors
+\usepackage[utf8]{inputenc}
+\usepackage[T2A,T1]{fontenc}
+\usepackage[russian,english]{babel}
 
 
 \setlength{\parindent}{0pt}
@@ -162,7 +165,7 @@ Problem Numbers:
 \section{Chapter 1: The Coordinates of Points on a Line}
 
 %%%%%%%%%% 1
-\subsection{The Number Axis}
+\subsection{1. The Number Axis}
 
 \textbf{Exercise 1}
 
@@ -467,7 +470,7 @@ For $-3\frac{1}{4} \le x \le 0$\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%% 2
-\subsection{The Absolute Value of a Number}
+\subsection{2. The Absolute Value of a Number}
 
 \textbf{Exercise 1}
 
@@ -744,7 +747,7 @@ the main equation. Therefore, the solution is $-2 \le x \le -1$.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%% 3
-\subsection{The Distance Between Two Points}
+\subsection{3. The Distance Between Two Points}
 
 \textbf{Exercise 1}
 
@@ -1146,13 +1149,204 @@ The second inequality:\\
 
 \end{tikzpicture}
 
+\clearpage
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Chapter End
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \section{Chapter 2: The Coordinates of Points in the Plane}
 
 %%%%%%%%%% 4
-\subsection{The Coordinate Plane}
+\subsection{4. The Coordinate Plane}
+
+\textbf{Exercise 1}
+
+These are points on the XY co-ordinate plane and can be plotted
+
+\begin{tikzpicture}[x=0.75cm,y=0.75cm]
+
+% Grid
+\draw[step=1cm, very thin, gray!30] (-3,-3) grid (13,3);
+
+% Axes
+\draw[->] (-3.2,0) -- (13.4,0) node[right] {$x$};
+\draw[->] (0,-3.2) -- (0,3.4) node[above] {$y$};
+
+% x-axis ticks and labels
+\foreach \x in {-2,-1,1,2,3,4,5,6,7,8,9,10,11,12}
+{
+    \draw (\x,0.08) -- (\x,-0.08);
+    \node[below] at (\x,0) {\small $\x$};
+}
+
+% y-axis ticks and labels
+\foreach \y in {-2,-1,1,2,3}
+{
+    \draw (0.08,\y) -- (-0.08,\y);
+    \node[left] at (0,\y) {\small $\y$};
+}
+
+% Origin label
+\node[below left] at (0,0) {\small $0$};
+
+% Plot points
+\foreach \x/\y in {
+6/2,
+9/2,
+12/1,
+12/0,
+11/-2,
+9/-2,
+4/-2,
+2/-1,
+1/1,
+-1/1,
+-2/0,
+-2/-2,
+2/1,
+5/2,
+12/2,
+9/1,
+10/-2,
+10/0,
+4/1,
+2/2,
+-2/2,
+-2/1,
+-2/-1,
+0/0,
+2/0,
+2/-2,
+4/-1,
+12/-1,
+12/-2,
+11/0,
+7/2,
+4/0,
+9/0,
+4/2
+}
+{
+    \fill (\x,\y) circle (2.2pt);
+}
+
+\end{tikzpicture}
+
+And Prof Gelfand gives us an Easter egg!
+
+The points appear to spell \foreignlanguage{russian}{МГУ} in Cyrillic.\\
+\foreignlanguage{russian}{М} --- the Russian letter M.\\
+\foreignlanguage{russian}{Г} --- the Russian letter G, 
+which resembles an inverted L ($\Gamma$).\\
+\foreignlanguage{russian}{У} --- the Russian letter U, 
+which resembles the English Y.\\
+\foreignlanguage{russian}{МГУ} (MGU) stands for 
+\foreignlanguage{russian}{Московский государственный университет}
+--- Moscow State University.
+
+I. M. Gelfand organized the Mathematics Correspondence School at Moscow State University in 1963. The book \textit{The Method of Coordinates} was 
+the first book taught to students.
+
+\begin{tikzpicture}[x=0.75cm,y=0.75cm]
+
+% Light coordinate grid
+\foreach \x in {-3,-2,...,13}
+    \draw[very thin,gray!25] (\x,-3) -- (\x,3);
+
+\foreach \y in {-3,-2,...,3}
+    \draw[very thin,gray!25] (-3,\y) -- (13,\y);
+
+% Coordinate axes
+\draw[->] (-3.2,0) -- (13.4,0) node[right] {$x$};
+\draw[->] (0,-3.2) -- (0,3.4) node[above] {$y$};
+
+% X-axis ticks and labels
+\foreach \x in {-2,-1,1,2,3,4,5,6,7,8,9,10,11,12}
+{
+    \draw (\x,0.08) -- (\x,-0.08);
+    \node[below] at (\x,0) {\small $\x$};
+}
+
+% Y-axis ticks and labels
+\foreach \y in {-2,-1,1,2,3}
+{
+    \draw (0.08,\y) -- (-0.08,\y);
+    \node[left] at (0,\y) {\small $\y$};
+}
+
+% Origin
+\node[below left] at (0,0) {\small $0$};
+
+% Thin red tracing
+
+% First letter: M
+\draw[red,line width=0.6pt]
+    (-2,-2) -- (-2,2) -- (0,0) --
+    (2,2) -- (2,-2);
+
+% Second letter: Gamma-shaped letter
+\draw[red,line width=0.6pt]
+    (4,-2) -- (4,2) -- (7,2);
+
+% Third letter: upper strokes
+\draw[red,line width=0.6pt]
+    (9,2) -- (9,0) -- (12,0);
+
+% Third letter: right vertical stroke
+\draw[red,line width=0.6pt]
+    (12,2) -- (12,-2);
+
+% Third letter: lower horizontal stroke
+\draw[red,line width=0.6pt]
+    (9,-2) -- (12,-2);
+
+% Original plotted points
+% Drawn last so dots remain visible
+\foreach \x/\y in {
+6/2,
+9/2,
+12/1,
+12/0,
+11/-2,
+9/-2,
+4/-2,
+2/-1,
+1/1,
+-1/1,
+-2/0,
+-2/-2,
+2/1,
+5/2,
+12/2,
+9/1,
+10/-2,
+10/0,
+4/1,
+2/2,
+-2/2,
+-2/1,
+-2/-1,
+0/0,
+2/0,
+2/-2,
+4/-1,
+12/-1,
+12/-2,
+11/0,
+7/2,
+4/0,
+9/0,
+4/2
+}
+{
+    \fill[black] (\x,\y) circle (2pt);
+}
+
+\end{tikzpicture}
+
+
 
 %%%%%%%%%% 5
 \subsection{Relations Connecting Coordinates}
